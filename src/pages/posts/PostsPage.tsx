@@ -1,5 +1,4 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
-
 import { postsQueryOptions } from "./api/PostsOptions";
 
 const PostsPage = () => {
