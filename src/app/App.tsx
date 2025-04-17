@@ -1,4 +1,3 @@
-import Posts from "@/widgets/posts/Posts";
 import { useCounter } from "./model/counter";
 
 const App = () => {

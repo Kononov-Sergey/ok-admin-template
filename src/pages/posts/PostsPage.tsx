@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchPosts } from "@/app/api/AxiosClient";
 
-const Posts = () => {
+const PostsPage = () => {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["posts"],
     queryFn: fetchPosts,
@@ -23,4 +23,4 @@ const Posts = () => {
   );
 };
 
-export default Posts;
+export default PostsPage;
