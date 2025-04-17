@@ -1,14 +1,24 @@
-import { defineConfig, UserConfig, } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import tailwindcss from '@tailwindcss/vite'
+import { defineConfig, UserConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import tailwindcss from "@tailwindcss/vite";
+import { fileURLToPath } from "url";
+import { dirname, resolve } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // https://vite.dev/config/
 export default defineConfig({
-    plugins: [react(), tailwindcss()],
-    test: {
-        globals: true,
-        environment: 'jsdom',
-        setupFiles: '/vitest-setup.ts',
-        include: ['**/*.test.{ts,tsx}']
+  plugins: [react(), tailwindcss()],
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "./src"),
     },
-} as UserConfig)
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "/vitest-setup.ts",
+    include: ["**/*.test.{ts,tsx}"],
+  },
+} as UserConfig);
