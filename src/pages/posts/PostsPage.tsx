@@ -2,8 +2,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import { postsQueryOptions } from "./api/PostsOptions";
 
 const PostsPage = () => {
-  const postsQuery = useSuspenseQuery(postsQueryOptions);
-  const posts = postsQuery.data;
+  const { data: posts } = useSuspenseQuery(postsQueryOptions);
 
   return (
     <div className="flex flex-col items-center justify-center">

@@ -17,6 +17,16 @@ export default defineConfig({
       "@": resolve(__dirname, "./src"),
     },
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        // убирает api из запроса http://localhost:3000/api/users -> http://localhost:3000/users
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
   test: {
     globals: true,
     environment: "jsdom",
