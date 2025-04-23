@@ -32,6 +32,12 @@ export default tseslint
         "react/jsx-key": "error",
         "react/no-array-index-key": "warn",
       },
+    },
+    {
+      files: ["**/ui/**/*.ts", "**/ui/**/*.tsx", "**/tools/theme-provider.tsx"],
+      rules: {
+        "react-refresh/only-export-components": "off",
+      },
     }
   )
   .concat(eslintPluginPrettier);
